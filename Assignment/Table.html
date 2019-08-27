@@ -20,7 +20,7 @@
         <div class="card">
             <div class="card-header card-header-warning">
                 <h4 class="card-title">Employees Data</h4>
-                <p class="card-category">New employees on 15th September, 2016</p>
+                <p class="card-category">New employees on <span id="str_date">str_date</span></p>
             </div>
             <div class="card-body table-responsive">
                 <table id="tablePeople" class="table table-hover">
@@ -45,6 +45,57 @@
     <script type="text/javascript" src="js/addons/datatables.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            var date = new Date();
+
+            var str_date = document.getElementById("str_date").innerHTML = date.getDate() + ' ' + getMonth(parseInt(date.getMonth())) + ' ' + date.getFullYear();
+
+            function getMonth(str_month) {
+                var retMonth = "";
+                switch (str_month) {
+                    case 0:
+                        retMonth = "Januari";
+                        break;
+                    case 1:
+                        retMonth = "Februari";
+                        break;
+                    case 2:
+                        retMonth = "Maret";
+                        break;
+                    case 3:
+                        retMonth = "April";
+                        break;
+                    case 4:
+                        retMonth = "Mei";
+                        break;
+                    case 5:
+                        retMonth = "Juni";
+                        break;
+                    case 6:
+                        retMonth = "Juli";
+                        break;
+                    case 7:
+                        retMonth = "Agustus";
+                        break;
+                    case 8:
+                        retMonth = "September";
+                        break;
+                    case 9:
+                        retMonth = "Oktober";
+                        break;
+                    case 10:
+                        retMonth = "November";
+                        break;
+                    case 11:
+                        retMonth = "Desember";
+                        break;
+
+                    default:
+                        retMonth = "Desember";
+                        break;
+                }
+                return retMonth;
+            }
+
             $.ajax({
                 async: true,
                 url: 'https://swapi.co/api/people/?format=json',
@@ -68,7 +119,7 @@
             });
 
             $('#tablePeople').DataTable();
-            $('.dataTables_length').addClass('bs-select');
+            //$('.dataTables_length').addClass('bs-select');
 
             function getTheHomeland(strURL) {
                 var retVal = "xxx";
@@ -79,8 +130,6 @@
                     dataType: 'json',
                     success: function(data) {
                         retVal = data.name;
-
-
                     }
                 });
 
