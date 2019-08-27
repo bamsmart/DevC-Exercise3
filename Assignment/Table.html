@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Data Tabel
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- MDBootstrap Datatables  -->
+    <link href="css/addons/datatables.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="col-lg-12 col-md-12">
+        <div class="card">
+            <div class="card-header card-header-warning">
+                <h4 class="card-title">Employees Data</h4>
+                <p class="card-category">New employees on 15th September, 2016</p>
+            </div>
+            <div class="card-body table-responsive">
+                <table id="tablePeople" class="table table-hover">
+                    <thead class="text-warning">
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Height</th>
+                    </thead>
+                    <tbody id="data-people"></tbody>
+                    <tfoot>
+
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- MDBootstrap Datatables  -->
+    <script type="text/javascript" src="js/addons/datatables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.ajax({
+                async: true,
+                url: 'https://swapi.co/api/people/?format=json',
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                success: function(response) {
+                    var html = '';
+                    var no = 1;
+                    for (i = 0; i < response.results.length; i++) {
+                        html += '<tr role=row>' +
+                            '<td>' + no + '</td>' +
+                            '<td>' + response.results[i].name + '</td>' +
+                            '<td>' + response.results[i].gender + '</td>' +
+                            '<td>' + response.results[i].height + ' cm' + '</td>' +
+                            '</tr>';
+                        no++;
+                    }
+
+                    $('#data-people').html(html);
+                }
+            });
+
+            $('#tablePeople').DataTable();
+            $('.dataTables_length').addClass('bs-select');
+
+            function getTheHomeland(strURL) {
+                var retVal = "xxx";
+                $.ajax({
+                    async: false,
+                    url: strURL + '?format=json',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function(data) {
+                        retVal = data.name;
+
+
+                    }
+                });
+
+                return retVal;
+            }
+        });
+    </script>
+</body>
+
+</html>
