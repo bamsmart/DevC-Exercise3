@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>
+        Function
+    </title>
+    <script type="text/javascript">
+        var d = document;
+
+        // Function Biasa
+        function tampilkan() {
+            console.log("Halo, Bambang T. Lasiman");
+        }
+        tampilkan();
+
+
+        // Function Return Value 
+        function returnValue() {
+
+            return "2";
+        }
+        console.log(returnValue());
+
+
+        //Function with params
+        function getData(num1, num2) {
+            return (num1 + num2);
+
+        }
+
+        console.log(getData(2, 5));
+
+
+        // Function Params Default
+        function defaultValue(num = 2) {
+            return num + 2;
+        }
+        console.log(defaultValue(3));
+
+        // Anonimous Function = function yang dimasukkan kedalam variable
+        var angkaKali2 = function AnonimousFunction(num) {
+            return (num * 2);
+        }
+
+        console.log(angkaKali2(2));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

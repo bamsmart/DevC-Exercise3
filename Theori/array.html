@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>
+        Array
+    </title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        // Array pakai kurung siku
+        var fruits = ["Apple", "Jambu", "Alpukat", "Kelengkeng"];
+        var any = ["Meja", "Rumah", 4, "Mobil"];
+
+        console.log(fruits[2]);
+        console.log(any[1]);
+
+        // Object menggunakan kurung kurawal
+        var orang = {
+            nama: "Bambang T. Lasiman",
+            gender: "Laki - laki",
+            umur: 28
+        };
+        console.log(orang.gender);
+
+        // Array List
+        var peoples = [{
+            "nama": "Bambang T. Lasiman",
+            "gender": "Laki - laki",
+            "umur": 28,
+            "hobbies": ["Lari", "Ngoding"]
+        }, {
+            "nama": "Yuliani",
+            "gender": "Perempuan",
+            "umur": 26,
+            "hobbies": ["Tidur", "Makan"]
+        }];
+
+        for (var i = 0; i < peoples.length; i++) {
+            console.log(peoples[i].nama);
+            console.log(peoples[i].hobbies[1]);
+        }
+
+        peoples.forEach(element => {
+            console.log("Nama : " + element.nama);
+        });
+
+
+        // Cara looping array javascript
+
+        // 1. ForEach
+        const array = [1, 2, 3, 4, 5];
+
+        array.forEach(item => {
+            console.log(item);
+        });
+
+
+        // Filter
+        const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const filteredArr = angka.filter(item => item % 2 === 0);
+
+        console.log(filteredArr);
+
+        // Map
+        const number = [1, 2, 3, 5, 6, 6, 7, 8, 8, 8, 8, 9, 10];
+
+        const mapArray = number.map(item => item % 2 === 0);
+        console.log(mapArray); // return true / false on each data
+
+        // Includes 
+        const includeArr = number.includes(3);
+        console.log(includeArr); // return true / false
+
+        // Some
+        const someArr = number.some(item => item % 2 === 0);
+        console.log(someArr);
+    </script>
+
+</body>
+
+</html>

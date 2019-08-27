@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>
+        Array COntinue
+    </title>
+    <script type="text/javascript">
+        var animal = ["Jaran", "Sapi", "Kebo", "Ulo", "Jangkrik"];
+
+        //push -> nambah di depan
+        animal.push("Asu");
+
+        console.log(animal);
+
+        // pop -> ngambil paling belakang
+        animal.pop();
+        console.log(animal);
+
+        // unshift -> nambah dari depan
+        animal.unshift("Kodok");
+        console.log(animal);
+
+        // shift ngambil di depan
+        animal.shift();
+        console.log(animal);
+
+
+        // Array Join -> array ke string
+        console.log(animal.join());
+
+
+        // Array Sort
+        animal.sort();
+        console.log(animal);
+
+        // Slice = ngambil data tertentu, index ke berapa - ke berapa, ada 3 parameter
+        //
+        console.log(animal.slice(1, 2));
+
+        // Splice = ngambil data tertentu, index ke berapa - ke berapa, ada 3 parameter
+        console.log(animal.splice(1, 2, "Kupu"));
+
+
+        // Split -> memecah string dengan pemisah
+        var char = "Tidak ada manusia yang sempurna";
+        var charArr = char.split(" ");
+        console.log(charArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
