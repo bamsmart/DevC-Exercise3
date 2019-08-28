@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Data Tabel
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <!-- MDBootstrap Datatables  -->
+
+</head>
+
+<body>
+    <div class="col-lg-12 col-md-12">
+        <div class="card">
+            <div class="card-header card-header-warning">
+                <h4 class="card-title">Employees Data</h4>
+                <p class="card-category">New employees on <span id="str_date">str_date</span></p>
+            </div>
+            <div class="card-body table-responsive">
+                <table id="tablePeople" class="table table-hover">
+                    <thead class="text-warning">
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Diameter</th>
+                        <th>Orbital Periode</th>
+                         <th>Climate</th>
+                           <th>Last Updated</th>
+                    </thead>
+                    <tbody id="planet-data"></tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/data.js">
+    </script>
+    
+</body>
+
+</html>
